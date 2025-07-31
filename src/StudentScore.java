@@ -22,8 +22,8 @@ public class StudentScore {
         System.out.println("\n Student Information: ");
         System.out.println("Student ID: " + studentId);
         System.out.println("Student Name: " + firstName + "" + lastName);
-        System.out.println("Student's Course: " + course);
-        System.out.println("Student's Section: " + section);
+        System.out.println("Course: " + course);
+        System.out.println("Section: " + section);
 
         System.out.println("\n Exam Scores: ");
 
