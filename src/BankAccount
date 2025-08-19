@@ -1,0 +1,56 @@
+public class BankAccount {
+
+    static String bankName = "Liceo Bank";
+    static int totalAccounts = 0;
+    static double interestRate = 0.03; // 3%
+    private static int accountCounter = 1;
+
+
+    private String accountNumber;
+    private String accountHolderName;
+    private double balance;
+
+
+    public static String generateAccountNumber() {
+        return "ACC" + String.format("%03d", accountCounter++);
+    }
+
+
+    public BankAccount(String accountHolderName, double initialBalance) {
+        this.accountHolderName = accountHolderName;
+        this.balance = initialBalance;
+        this.accountNumber = generateAccountNumber();
+        totalAccounts++;
+        System.out.printf("Account Created: %s for %s with initial balance: $%.1f%n",
+                this.accountNumber, this.accountHolderName, this.balance);
+    }
+
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+            System.out.printf("%s deposited $%.1f. New balance: $%.1f%n",
+                    accountHolderName, amount, balance);
+        }
+    }
+
+
+    public void withdraw(double amount) {
+        if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            System.out.printf("%s withdrew $%.1f. New balance: $%.1f%n",
+                    accountHolderName, amount, balance);
+        }
+    }
+
+
+    public double calculateInterest() {
+        return balance * interestRate;
+    }
+
+
+    public void displayAccountInfo() {
+        System.out.printf("Account Number: %s, Name: %s, Balance: $%.2f%n",
+                accountNumber, accountHolderName, balance);
+    }
+}
