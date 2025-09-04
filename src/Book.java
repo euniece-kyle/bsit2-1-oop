@@ -45,8 +45,8 @@ public class Book {
         if (ratings.isEmpty()) return "No ratings";
         if (avg >= 4.5) return "Excellent";
         else if (avg >= 3.5) return "Good";
-        else if (avg >= 2.5) return "Average";
-        else if (avg >= 1.5) return "Poor";
+        else if (avg >= 1.5) return "Average";
+        else if (avg >= 1.0) return "Poor";
         else return "Terrible";
     }
 
